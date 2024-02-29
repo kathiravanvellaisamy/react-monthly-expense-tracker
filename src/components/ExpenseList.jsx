@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
+import ExpenseItem from "./ExpenseItem";
+
 const ExpenseList = () => {
   const { expenses } = useContext(AppContext);
   return (
@@ -15,16 +17,13 @@ const ExpenseList = () => {
         />
       </div>
       <div className="mt-3  d-flex align-items-center justify-content-center mb-3 ">
-        <form action=""></form>
-        <ul class="list-group w-75">
+        <ul className="list-group w-75">
           {expenses.map((expense, index) => (
-            <li
-              key={expense.id}
-              class="list-group-item fs-4 d-flex justify-content-between"
-            >
-              <span> {expense.name} </span>
-              <span className="badge bg-primary p-2">{expense.cost}</span>
-            </li>
+            <ExpenseItem
+              id={expense.id}
+              name={expense.name}
+              cost={expense.cost}
+            />
           ))}
         </ul>
       </div>
