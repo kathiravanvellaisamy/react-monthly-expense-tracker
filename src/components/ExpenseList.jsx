@@ -2,11 +2,11 @@ import React from "react";
 
 const ExpenseList = () => {
   const expenses = [
-    { id: 1, name: "Shopping", fee: 20000 },
-    { id: 2, name: "Entertainment", fee: 10000 },
-    { id: 3, name: "Rent", fee: 2000 },
-    { id: 4, name: "Travel", fee: 5000 },
-    { id: 5, name: "Electricity", fee: 800 },
+    { id: 1, name: "Shopping", cost: 20000 },
+    { id: 2, name: "Entertainment", cost: 10000 },
+    { id: 3, name: "Rent", cost: 2000 },
+    { id: 4, name: "Travel", cost: 5000 },
+    { id: 5, name: "Electricity", cost: 800 },
   ];
   return (
     <>
@@ -25,10 +25,10 @@ const ExpenseList = () => {
           {expenses.map((expense, index) => (
             <li
               key={expense.id}
-              class="list-group-item fs-3 d-flex justify-content-between"
+              class="list-group-item fs-4 d-flex justify-content-between"
             >
               <span> {expense.name} </span>
-              <span className="badge bg-danger p-2">{expense.fee}</span>
+              <span className="badge bg-danger p-2">{expense.cost}</span>
             </li>
           ))}
         </ul>
