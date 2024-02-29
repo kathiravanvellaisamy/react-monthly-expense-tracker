@@ -1,13 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 const ExpenseList = () => {
-  const expenses = [
-    { id: 1, name: "Shopping", cost: 20000 },
-    { id: 2, name: "Entertainment", cost: 10000 },
-    { id: 3, name: "Rent", cost: 2000 },
-    { id: 4, name: "Travel", cost: 5000 },
-    { id: 5, name: "Electricity", cost: 800 },
-  ];
+  const { expenses } = useContext(AppContext);
   return (
     <>
       <div className="d-flex  align-items-center justify-content-center mb-3">
@@ -28,7 +23,7 @@ const ExpenseList = () => {
               class="list-group-item fs-4 d-flex justify-content-between"
             >
               <span> {expense.name} </span>
-              <span className="badge bg-danger p-2">{expense.cost}</span>
+              <span className="badge bg-primary p-2">{expense.cost}</span>
             </li>
           ))}
         </ul>
